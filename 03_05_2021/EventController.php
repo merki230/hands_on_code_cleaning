@@ -305,3 +305,5 @@ class EventController extends Controller
         return \response()->json($event, 200);
     }
 }
+
+//

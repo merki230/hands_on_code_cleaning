@@ -15,6 +15,7 @@ export default {
   },
   store: (req, res) => {
     try {
+      // Il faut juste faire attention parfois avec l'utilisation de callback du coté serveur, ça peut amener les éffets de bord 
       bcrypt.genSalt(10, (err, salt) => {
         if (err) {
           console.log(err);

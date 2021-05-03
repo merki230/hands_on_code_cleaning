@@ -222,6 +222,8 @@ class EventController extends Controller
       return response()->json('success', Response::HTTP_OK);
     }
 
+    // Pour respecter le principe de role, 
+    // on pourrait utiliser le mecanisme de custom request de laravel 
     public function validator(){
         return request()->validate([
         'name' => 'nullable|string|max:255',
@@ -277,6 +279,8 @@ class EventController extends Controller
         ]);
     }
 
+    //On pourrait aussi crée un service de stockage pour implémenter toute cette logique 
+    // et l'injecter la où on veut l'utiliser
     private function storeImage(Event $event){
         if (request('picture')) {
             $name = request('picture')->store('logo_event','public');
